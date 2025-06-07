@@ -6,8 +6,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['var(--font-inter)'],
-        serif: ['var(--font-playfair)'],
+        sans: ['var(--font-sans)'],
+        serif: ['var(--font-serif)'],
       },
       colors: {
         background: '#F7F5F1',
