@@ -1,10 +1,9 @@
 import React from 'react';
 
-export default function HomePage() {
+export default function Something() {
   return (
-    <main style={{ fontFamily: 'sans-serif', padding: '2rem' }}>
+    <main style={{padding: '2rem' }}>
       <h1>Ayaan Javed | Portfolio</h1>
-      <p>My new portfolio, built with Next.js and deployed on cPanel!</p>
     </main>
   );
 }

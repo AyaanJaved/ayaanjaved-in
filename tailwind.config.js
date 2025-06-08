@@ -6,15 +6,16 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['var(--font-sans)'],
-        serif: ['var(--font-serif)'],
+        display: ['var(--font-display)'],
+        serif: ['Playfair Display', 'serif'],
       },
       colors: {
-        background: '#F7F5F1',
+        background: '#EAE7DC',
         dark: '#0C0908',
+        secondary: '#D8C3A5',
         accent: {
-          DEFAULT: '#D9AE6E',
-          hover: '#BC5831',
+          DEFAULT: '#E98074',
+          hover: '#E85A4F',
         },
       },
     },
