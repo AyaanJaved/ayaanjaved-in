@@ -106,13 +106,13 @@ export default function HeroSection() {
                   transform: `rotate(${i * DOT_ANGLE}deg) translateX(240px)`
                 }}
               >
-                <Image
-                  src="https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png"
+                {/* <Image
+                  src="https://cdn.worldvectorlogo.com/logos/android-4.svg"
                   alt={`dot${i + 1}`}
                   width={28}
                   height={28}
                   unoptimized
-                />
+                /> */}
               </div>
             ))}
           </div>
