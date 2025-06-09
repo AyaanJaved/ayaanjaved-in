@@ -5,17 +5,15 @@ import './globals.css';
 
 const inter = Inter({
   subsets: ['latin'],
-  variable: '--font-inter',
 });
 
 const playfair = Playfair_Display({
   subsets: ['latin'],
-  variable: '--font-playfair',
 });
 
 export const metadata: Metadata = {
-  title: 'Ayaan Javed | Web Developer',
-  description: 'The professional portfolio for Ayaan Javed.',
+  title: 'Ayaan Javed',
+  description: 'Trying to make a portfolio here',
 };
 
 export default function RootLayout({
@@ -26,9 +24,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter.variable} ${playfair.variable} bg-background text-dark font-sans`}
-      >
-        <Navbar />
+        className={`bg-background text-dark font-sans`}>
+        <Navbar/>
         {children}
       </body>
     </html>
