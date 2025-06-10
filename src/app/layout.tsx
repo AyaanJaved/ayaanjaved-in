@@ -24,7 +24,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`bg-background text-dark font-sans`}>
+        className={`${inter.className} ${playfair.className} bg-background text-dark font-sans`}>
         <Navbar/>
         {children}
       </body>
