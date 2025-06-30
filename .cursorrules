@@ -111,6 +111,20 @@ This is a personal portfolio website for Ayaan Javed, built with Next.js 15, Rea
 - **Performance Monitoring**: Understand how to measure and improve web performance
 - **Mobile Performance**: Ensure fast loading on mobile devices (interviewers often check on phones)
 
+### Deployment Setup
+
+- **Method**: Manual FTP deployment
+- **Build Process**: Next.js static export
+- **Server**: FTP server (details to be added when needed)
+- **Domain**: To be configured
+- **Notes**: Manual deployment process, will document specific steps when deploying
+- **Deployment Steps**:
+  1. Run `npm run build` to create static export in `out/` directory
+  2. Compress `out/` directory: `powershell Compress-Archive -Path .\out\* -DestinationPath .\out.zip -Force`
+  3. Upload `out.zip` to FTP server at `/public_html`
+  4. Extract and override contents on server
+  5. Verify deployment by visiting domain
+
 ## Tech Stack
 
 - **Framework**: Next.js 15 with App Router
