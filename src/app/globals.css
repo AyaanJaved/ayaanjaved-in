@@ -14,3 +14,61 @@
 .animate-spin-slow {
   animation: spin-slow 20s linear infinite;
 }
+
+@keyframes orbit {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+.orbit-container {
+  position: relative;
+  width: 500px;
+  height: 500px;
+}
+.orbit-image {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+.orbit-ring {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  animation: orbit 15s linear infinite;
+  pointer-events: none;
+  z-index: 3;
+}
+.orbit-dot {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background-color: rgba(233, 128, 116, 0.18);
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  margin: -25px 0 0 -25px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.1s linear;
+  box-shadow: 0 0 32px 16px rgba(233, 128, 116, 0.25), 0 0 64px 32px rgba(233, 128, 116, 0.10);
+}
+.orbit-dot.dot1 {
+  width: 70px;
+  height: 70px;
+  margin: -35px 0 0 -35px;
+}
+.orbit-dot img {
+  object-fit: contain;
+  pointer-events: none;
+  user-select: none;
+  filter: drop-shadow(0 0 8px rgba(233, 128, 116, 0.7));
+}
