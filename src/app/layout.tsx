@@ -2,25 +2,80 @@ import type { Metadata } from 'next';
 import Navbar from './components/Navbar';
 import './globals.css';
 import { interFont, playfairFont } from './fonts';
-
-// ... existing code ...
+import GoogleAnalytics from './components/GoogleAnalytics';
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://ayaanjaved.com'), // Update this with your actual domain
-  title: 'Ayaan Javed',
-  description: 'Portfolio of Ayaan Javed - Software Engineer, Musician, Traveller',
-  keywords: ['Ayaan Javed', 'portfolio', 'software engineer', 'android developer', 'aosp', 'piano'],
+  metadataBase: new URL('https://ayaanjaved.com'),
+  title: {
+    default: 'Ayaan Javed - Software Engineer, Musician & Traveller',
+    template: '%s | Ayaan Javed'
+  },
+  description: 'Android Developer transitioning to Software Engineer, specializing in Android AOSP development. Passionate about system-level programming, mobile development, and creating impactful software solutions.',
+  keywords: [
+    'Ayaan Javed',
+    'software engineer',
+    'Android developer',
+    'AOSP developer',
+    'mobile development',
+    'system programming',
+    'musician',
+    'traveller',
+    'portfolio',
+    'FAANG',
+    'software engineering',
+    'Android AOSP',
+    'mobile software',
+    'system development',
+    'Java',
+    'Kotlin',
+  ],
+  authors: [{ name: 'Ayaan Javed' }],
+  creator: 'Ayaan Javed',
+  publisher: 'Ayaan Javed',
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  alternates: {
+    canonical: '/',
+  },
   openGraph: {
-    title: 'Ayaan Javed',
-    description: 'Explore my projects and skills as an aspiring SDE.',
-    images: ['/ayaan_cutout.png'],  // Using your actual profile image
-    url: 'https://ayaanjaved.com',  // Use your actual site URL
+    type: 'website',
+    locale: 'en_US',
+    url: 'https://ayaanjaved.com',
+    title: 'Ayaan Javed - Software Engineer, Musician & Traveller',
+    description: 'Android Developer transitioning to Software Engineer, specializing in Android AOSP development. Passionate about system-level programming and mobile development.',
     siteName: 'Ayaan Javed Portfolio',
+    images: [
+      {
+        url: '/ayaan_cutout.png',
+        width: 1200,
+        height: 630,
+        alt: 'Ayaan Javed - Software Engineer',
+      }
+    ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Ayaan Javed',
-    description: 'My portfolio showcasing web development projects.',
+    title: 'Ayaan Javed - Software Engineer, Musician & Traveller',
+    description: 'Android Developer transitioning to Software Engineer, specializing in Android AOSP development. Passionate about system-level programming and mobile development.',
+    images: ['/ayaan_cutout.png'],
+    creator: '@ayaanjaved',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  verification: {
+    google: 'your-google-verification-code',
   },
 };
 
@@ -33,6 +88,7 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={`${interFont.className} ${playfairFont.className} bg-background text-dark font-sans`}>
+        <GoogleAnalytics />
         <Navbar />
         {children}
       </body>
