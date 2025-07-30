@@ -1,3 +1,74 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  --dark-bg: #121212;
+  --light-text: #EAEAEA;
+  --primary-accent: #FFFFFF;
+  --secondary-accent: #AAAAAA;
+  --panel-bg: #1A1A1A;
+  --transition-speed: 0.5s;
+}
+
+body {
+  background-color: var(--dark-bg);
+  color: var(--light-text);
+  margin: 0;
+  overflow-x: hidden;
+}
+
+/* Custom Tailwind utilities */
+@layer utilities {
+  .bg-dark-bg {
+    background-color: var(--dark-bg);
+  }
+  
+  .bg-panel-bg {
+    background-color: var(--panel-bg);
+  }
+  
+  .text-primary-accent {
+    color: var(--primary-accent);
+  }
+  
+  .text-secondary-accent {
+    color: var(--secondary-accent);
+  }
+  
+  .animate-marquee {
+    animation: marquee 30s linear infinite;
+  }
+}
+
+@keyframes marquee {
+  0% { 
+    transform: translateX(0); 
+  }
+  100% { 
+    transform: translateX(-50%); 
+  }
+}
+
+/* Mobile responsive text sizes for preloader */
+@media (max-width: 768px) {
+  .preloader-main-text {
+    font-size: 10vw !important;
+  }
+  
+  .preloader-subtext {
+    font-size: 3vw !important;
+  }
+  
+  .hero-name {
+    font-size: 20vw !important;
+  }
+  
+  .tagline {
+    font-size: 1.2rem !important;
+  }
+  
+  .marquee-text {
+    font-size: 1rem !important;
+  }
+}

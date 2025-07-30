@@ -1,8 +1,12 @@
+import HeroContainer from './components/HeroContainer';
+
 export default function Home() {
   return (
     <main>
-      <div className="min-h-screen flex items-center justify-center">
-        <h1 className="text-4xl font-bold">Fresh Start</h1>
+      <HeroContainer />
+      
+      <div className="p-20 text-center">
+        <h2 className="text-2xl">The page content starts here...</h2>
       </div>
     </main>
   );
