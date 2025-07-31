@@ -90,11 +90,11 @@ export default function Preloader({ onComplete }: PreloaderProps) {
       >
         <div
           ref={mainTextRef}
-          className={`${montserrat.className} font-extrabold text-[5vw] md:text-[5vw] text-primary-accent leading-tight text-center`}
+          className={`${montserrat.className} font-extrabold text-[5vw] md:text-[5vw] text-primary-accent leading-tight text-center preloader-main-text`}
         />
         <div
           ref={subtextRef}
-          className={`${roboto.className} font-light text-[1.5vw] md:text-[1.5vw] text-secondary-accent tracking-[2px] uppercase text-center`}
+          className={`${roboto.className} font-light text-[1.5vw] md:text-[1.5vw] text-secondary-accent tracking-[2px] uppercase text-center preloader-subtext`}
         />
       </div>
 
@@ -107,9 +107,16 @@ export default function Preloader({ onComplete }: PreloaderProps) {
         }
         
         @media (max-width: 768px) {
+          .preloader-main-text {
+            font-size: 12vw !important;
+          }
+          
+          .preloader-subtext {
+            font-size: 4vw !important;
+          }
+          
           .urdu-text {
-            font-size: 7vw !important;
-            transform: translateY(-40px) !important;
+            transform: translateY(-30px) !important;
           }
         }
       `}</style>

@@ -4,15 +4,13 @@ import { roboto, montserrat } from '../fonts';
 
 export default function Marquee() {
   const marqueeItems = [
-    'AYAAN',
-    '—',
-    'CREATIVE DEVELOPER',
+    'DEVELOPER',
     '—',
     'PROBLEM SOLVER',
     '—',
-    'ELECTRONIC MUSICIAN',
+    'MUSICIAN',
     '—',
-    'EXPLORER',
+    'TRAVELLER',
     '—'
   ];
 
@@ -26,10 +24,6 @@ export default function Marquee() {
               ? `${montserrat.className} font-extrabold text-2xl text-transparent mr-12`
               : `${roboto.className} marquee-text font-normal text-xl md:text-base text-secondary-accent mr-12`
             }
-            style={item === 'AYAAN' ? {
-              WebkitTextStroke: '1px var(--primary-accent)',
-              textStroke: '1px var(--primary-accent)'
-            } : {}}
           >
             {item}
           </span>

@@ -50,16 +50,8 @@ body {
   }
 }
 
-/* Mobile responsive text sizes for preloader */
+/* Mobile responsive text sizes */
 @media (max-width: 768px) {
-  .preloader-main-text {
-    font-size: 10vw !important;
-  }
-  
-  .preloader-subtext {
-    font-size: 3vw !important;
-  }
-  
   .hero-name {
     font-size: 20vw !important;
   }
