@@ -1,6 +1,6 @@
 'use client';
 
-import { roboto } from '../fonts';
+import { roboto, montserrat } from '../fonts';
 
 export default function Marquee() {
   const marqueeItems = [
@@ -22,7 +22,14 @@ export default function Marquee() {
         {marqueeItems.map((item, index) => (
           <span 
             key={`first-${index}`}
-            className={`${roboto.className} marquee-text font-normal text-xl md:text-base text-secondary-accent mr-12`}
+            className={item === 'AYAAN' 
+              ? `${montserrat.className} font-extrabold text-2xl text-transparent mr-12`
+              : `${roboto.className} marquee-text font-normal text-xl md:text-base text-secondary-accent mr-12`
+            }
+            style={item === 'AYAAN' ? {
+              WebkitTextStroke: '1px var(--primary-accent)',
+              textStroke: '1px var(--primary-accent)'
+            } : {}}
           >
             {item}
           </span>
@@ -30,7 +37,14 @@ export default function Marquee() {
         {marqueeItems.map((item, index) => (
           <span 
             key={`second-${index}`}
-            className={`${roboto.className} marquee-text font-normal text-xl md:text-base text-secondary-accent mr-12`}
+            className={item === 'AYAAN' 
+              ? `${montserrat.className} font-extrabold text-2xl text-transparent mr-12`
+              : `${roboto.className} marquee-text font-normal text-xl md:text-base text-secondary-accent mr-12`
+            }
+            style={item === 'AYAAN' ? {
+              WebkitTextStroke: '1px var(--primary-accent)',
+              textStroke: '1px var(--primary-accent)'
+            } : {}}
           >
             {item}
           </span>
