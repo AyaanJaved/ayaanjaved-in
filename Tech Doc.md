@@ -1,14 +1,22 @@
-Technical Specification: "The Asymmetrical Showcase" Portfolio
-Version: 2.0 - Implementation Complete
+Technical Specification: Ayaan's Portfolio - Multi-Phase Architecture
+Version: 3.0 - Phase 1 Complete, Phase 2 Specifications Added
 Project: Ayaan's Personal Portfolio Website
 Framework: Next.js 15 + React 19 + TypeScript
 
 1. High-Level Overview
-   This document outlines the technical requirements for building a one-page, interactive hero section for a personal portfolio. The concept, "The Asymmetrical Showcase," is designed to present the subject's primary identity as a Creative Developer while showcasing secondary passions for Music and Travel.
-   The user experience is divided into three acts:
-   The Ignition: A dynamic preloader that sets the stage.
-   The Core Layout: An asymmetrical grid that establishes a clear visual hierarchy.
-   The Interaction: A rich, hover- and tap-driven experience that reveals different facets of the subject's personality.
+   This document outlines the technical requirements for a comprehensive portfolio system consisting of:
+   
+   **Phase 1: The Asymmetrical Showcase** ✅ IMPLEMENTED
+   A one-page interactive hero section serving as the primary landing page and recruitment-focused introduction.
+   
+   **Phase 2: Dedicated Section Spaces** 🚧 SPECIFICATION PHASE
+   Individual section pages (TECH, MUSIC, TRAVEL) with unique environmental characteristics while maintaining brand consistency.
+   
+   **Core Architecture Philosophy:**
+   - Home page preserves successful asymmetrical showcase for immediate impact
+   - Section pages provide immersive exploration spaces
+   - Consistent navigation spine maintains brand unity
+   - Progressive disclosure supports both quick scanning and deep exploration
 2. Core Technologies & Libraries ✅ IMPLEMENTED
    Frontend Framework: Next.js 15 with App Router, React 19, TypeScript (strict mode)
    Styling: Tailwind CSS with CSS Custom Properties for theming
@@ -94,3 +102,148 @@ Framework: Next.js 15 + React 19 + TypeScript
    Theme: Tech, Music, Travel.
    Composition: Must be composed with sufficient "negative space" or low-contrast areas to ensure the overlaid white text is legible.
    Optimization: All images must be optimized for fast web loading.
+
+7. Phase 2: Dedicated Section Architecture 🚧 SPECIFICATIONS
+
+7.1. Navigation System
+   **Route Structure:**
+   - `/` - Home page (current asymmetrical showcase)
+   - `/tech` - TECH section with development-focused environment
+   - `/music` - MUSIC section with audio-visual environment
+   - `/travel` - TRAVEL section with geographic environment
+   
+   **Navigation Implementation:**
+   - Panel components on home page become Next.js Link wrappers
+   - Smooth page transitions using GSAP or Framer Motion
+   - Breadcrumb system: [HOME] > [SECTION] for easy return navigation
+   - Consistent header/footer elements across all pages
+
+7.2. Section-Specific Environmental Systems
+
+   **7.2.1. TECH Section Environment**
+   Technology Stack Extensions:
+   - Canvas API or CSS animations for code rain background effects
+   - Syntax highlighting libraries (Prism.js, highlight.js)
+   - GitHub API integration for live contribution data
+   - Code sandbox embedding (CodePen, StackBlitz)
+   
+   Environmental Elements:
+   - Background: Animated matrix-style code rain, terminal cursor blinks
+   - Color Scheme: Monospace terminal aesthetics (green on black variants)
+   - Interactive Elements: Clickable code blocks, expandable project cards
+   - Sound Design: Optional subtle keyboard typing sounds, terminal beeps
+   
+   Content Architecture:
+   - Hero section with coding GIF/video background
+   - Interactive project showcase with live demos
+   - Skills visualization (tech stack, proficiency levels)
+   - GitHub contribution heatmap integration
+   - Code snippet galleries with syntax highlighting
+
+   **7.2.2. MUSIC Section Environment**
+   Technology Stack Extensions:
+   - Web Audio API for real-time visualizations
+   - Three.js or P5.js for 3D audio reactive graphics
+   - Spotify/SoundCloud API for track embedding
+   - Canvas-based waveform rendering
+   
+   Environmental Elements:
+   - Background: Real-time audio visualizers, frequency spectrum displays
+   - Color Scheme: Dynamic color palettes responding to audio frequencies
+   - Interactive Elements: Play/pause controls, volume visualizers
+   - Sound Design: Ambient electronic textures, beat-synchronized UI animations
+   
+   Content Architecture:
+   - Audio player with embedded tracks
+   - Production tools showcase (Ableton screenshots, gear photos)
+   - Genre exploration with audio samples
+   - Creative process documentation (studio photos, workflow videos)
+   - Collaboration history and featured releases
+
+   **7.2.3. TRAVEL Section Environment**
+   Technology Stack Extensions:
+   - Mapbox GL JS or Google Maps API for interactive maps
+   - Three.js for 3D globe visualizations
+   - Image optimization and lazy loading systems
+   - Geolocation APIs for location-based content
+   
+   Environmental Elements:
+   - Background: Animated world map with location pins, geographic transitions
+   - Color Scheme: Warm, earth-toned palettes inspired by travel photography
+   - Interactive Elements: Clickable map regions, photo gallery carousels
+   - Sound Design: Subtle ambient sounds from different regions
+   
+   Content Architecture:
+   - Interactive world map with visited locations
+   - Photo galleries organized by destination
+   - Travel stories with embedded media
+   - Cultural experiences documentation
+   - Location-based timeline of journeys
+
+7.3. Shared Component Systems
+
+   **7.3.1. Adaptive Marquee System**
+   The existing marquee component adapts content based on current section:
+   - Home: "अयान — DEVELOPER — PROBLEM SOLVER — عیان — MUSICIAN — TRAVELLER"
+   - TECH: "अयान — FULL STACK — REACT — عیان — NODE.JS — TYPESCRIPT"
+   - MUSIC: "अयान — PRODUCER — ELECTRONIC — عیان — ABLETON — SYNTHESIZER"
+   - TRAVEL: "अयान — EXPLORER — CULTURES — عیان — PHOTOGRAPHY — STORIES"
+   
+   **7.3.2. Navigation Header**
+   Consistent across all pages:
+   - Logo/Name (links to home)
+   - Section indicators with current state
+   - Language toggle (if multilingual content expands)
+   - Theme toggle (optional dark/light mode)
+   
+   **7.3.3. Transition System**
+   - Page-to-page transitions maintain spatial relationships
+   - Loading states with section-appropriate animations
+   - Smooth color palette transitions between sections
+   - Consistent timing functions across all animations
+
+7.4. Performance Considerations
+
+   **Code Splitting:**
+   - Section-specific components loaded on demand
+   - Heavy libraries (Three.js, audio processing) loaded only when needed
+   - Image optimization with next/image for all gallery content
+   
+   **Animation Performance:**
+   - Hardware acceleration for all visual effects
+   - RequestAnimationFrame for smooth 60fps animations
+   - GPU-optimized shaders for WebGL content
+   - Reduce motion preferences respected
+   
+   **Mobile Optimization:**
+   - Touch-friendly interactions for all environmental elements
+   - Reduced animation complexity on mobile devices
+   - Optimized asset delivery for mobile connections
+   - Progressive enhancement for advanced features
+
+7.5. Development Roadmap
+
+   **Phase 2a: Foundation (Week 1-2)**
+   - Routing system setup with Next.js App Router
+   - Basic section page layouts with shared components
+   - Navigation system implementation
+   
+   **Phase 2b: TECH Section (Week 3-4)**
+   - Code rain animations and terminal aesthetics
+   - Project showcase with GitHub API integration
+   - Interactive code demos and skills visualization
+   
+   **Phase 2c: MUSIC Section (Week 5-6)**
+   - Web Audio API integration and visualizations
+   - Embedded audio players and track showcases
+   - Production tools and creative process documentation
+   
+   **Phase 2d: TRAVEL Section (Week 7-8)**
+   - Interactive map system with location markers
+   - Photo gallery systems with geolocation data
+   - Travel story integration and cultural documentation
+   
+   **Phase 2e: Polish & Optimization (Week 9-10)**
+   - Performance optimization and mobile testing
+   - Cross-browser compatibility and accessibility audit
+   - SEO optimization and meta tag implementation

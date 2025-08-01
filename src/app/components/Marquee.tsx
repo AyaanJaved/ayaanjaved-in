@@ -1,6 +1,6 @@
 'use client';
 
-import { roboto, montserrat } from '../fonts';
+import { roboto } from '../fonts';
 
 export default function Marquee() {
   const marqueeItems = [
