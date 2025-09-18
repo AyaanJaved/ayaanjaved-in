@@ -1,21 +1,25 @@
 'use client';
 
-import { ReactNode } from 'react';
+import type { CSSProperties, HTMLAttributes, ReactNode } from 'react';
 import { montserrat } from '../../fonts';
 
-interface PanelProps {
+interface PanelProps extends HTMLAttributes<HTMLDivElement> {
   children: ReactNode;
   className?: string;
-  style?: React.CSSProperties;
+  style?: CSSProperties;
 }
 
-export default function Panel({ 
-  children, 
+export default function Panel({
+  children,
+  className,
+  style,
+  ...rest
 }: PanelProps) {
-  const panelStyles = `${montserrat.className} flex justify-center items-center bg-panel-bg font-extrabold transition-all duration-500 ease-in-out text-2xl opacity-60 hover:opacity-100 hover:bg-[#222222] border-l border-[#282828]`;
-  
+  const baseClassName = `${montserrat.className} group relative flex h-full w-full items-center justify-center overflow-hidden bg-panel-bg font-extrabold text-primary-accent/70 transition-all duration-500 ease-in-out hover:text-primary-accent hover:bg-[#1f1f1f] border-l border-[#282828]`;
+  const combinedClassName = [baseClassName, className].filter(Boolean).join(' ');
+
   return (
-    <div className={panelStyles}>
+    <div className={combinedClassName} style={style} {...rest}>
       {children}
     </div>
   );

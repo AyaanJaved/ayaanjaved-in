@@ -23,43 +23,123 @@ body {
   .bg-dark-bg {
     background-color: var(--dark-bg);
   }
-  
+
   .bg-panel-bg {
     background-color: var(--panel-bg);
   }
-  
+
   .text-primary-accent {
     color: var(--primary-accent);
   }
-  
+
   .text-secondary-accent {
     color: var(--secondary-accent);
   }
-  
+
   .animate-marquee {
     animation: marquee 30s linear infinite;
   }
 }
 
-@keyframes marquee {
-  0% { 
-    transform: translateX(0); 
+@layer components {
+  .hero-panel {
+    position: relative;
   }
-  100% { 
-    transform: translateX(-50%); 
+
+  .hero-name {
+    font-size: clamp(3rem, 9vw, 8.5rem);
+    line-height: 0.85;
+    letter-spacing: -0.045em;
+    -webkit-text-stroke: 1.5px rgba(234, 234, 234, 0.45);
+    color: transparent;
+    transition: color var(--transition-speed) ease,
+      -webkit-text-stroke-color var(--transition-speed) ease,
+      text-shadow var(--transition-speed) ease;
+  }
+
+  .hero-name--active,
+  .hero-panel:hover .hero-name {
+    color: var(--primary-accent);
+    -webkit-text-stroke-color: transparent;
+    text-shadow: 0 0 45px rgba(255, 255, 255, 0.25);
+  }
+
+  .hero-name-accent {
+    display: inline-block;
+    letter-spacing: 0.75rem;
+    text-transform: uppercase;
+    font-size: clamp(1rem, 1.8vw, 1.4rem);
+    color: rgba(234, 234, 234, 0.3);
+    transition: color var(--transition-speed) ease;
+  }
+
+  .hero-name-accent--active {
+    color: var(--primary-accent);
+  }
+
+  .hero-overlay {
+    pointer-events: none;
+    position: absolute;
+    inset: 0;
+    transition: opacity var(--transition-speed) ease;
+  }
+
+  .hero-overlay--tech {
+    background: linear-gradient(140deg, rgba(15, 15, 15, 0.88) 0%, rgba(15, 15, 15, 0.35) 55%, rgba(6, 8, 18, 0.85) 100%);
+  }
+
+  .hero-overlay--music {
+    background: linear-gradient(160deg, rgba(12, 10, 26, 0.92) 0%, rgba(76, 29, 149, 0.55) 45%, rgba(12, 10, 26, 0.85) 100%);
+  }
+
+  .hero-overlay--travel {
+    background: linear-gradient(160deg, rgba(8, 47, 73, 0.9) 0%, rgba(13, 148, 136, 0.4) 48%, rgba(6, 95, 70, 0.82) 100%);
+  }
+
+  .tagline {
+    font-size: clamp(1.1rem, 1.6vw, 1.75rem);
+    line-height: 1.55;
+    max-width: 48ch;
+    color: rgba(234, 234, 234, 0.78);
+  }
+
+  .secondary-panel-meta {
+    letter-spacing: 0.35rem;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+  }
+
+  .panel-cta {
+    letter-spacing: 0.3rem;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+  }
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
   }
 }
 
 /* Mobile responsive text sizes */
 @media (max-width: 768px) {
   .hero-name {
-    font-size: 20vw !important;
+    font-size: 18vw !important;
   }
-  
+
+  .hero-name-accent {
+    font-size: 0.9rem !important;
+    letter-spacing: 0.5rem !important;
+  }
+
   .tagline {
-    font-size: 1.2rem !important;
+    font-size: 1rem !important;
   }
-  
+
   .marquee-text {
     font-size: 1rem !important;
   }
