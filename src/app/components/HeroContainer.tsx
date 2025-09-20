@@ -65,8 +65,8 @@ export default function HeroContainer() {
 
       <div
         ref={heroRef}
-        className={`h-screen grid grid-cols-[60%_40%] max-md:grid-cols-1 max-md:grid-rows-[60%_40%] relative overflow-hidden transition-opacity duration-1000 ${showHero ? 'opacity-100' : 'opacity-0'}`}>
-        <div ref={mainPanelRef} className="h-full tech-panel-wrapper">
+        className={`min-h-screen md:h-screen flex flex-col md:grid md:grid-cols-[60%_40%] relative overflow-hidden transition-opacity duration-1000 pt-24 md:pt-0 pb-12 md:pb-0 ${showHero ? 'opacity-100' : 'opacity-0'}`}>
+        <div ref={mainPanelRef} className="tech-panel-wrapper md:h-full">
           <MainPanel />
         </div>
         <SecondaryPanels />

@@ -63,7 +63,9 @@ body {
   .marquee-text {
     font-size: 1rem !important;
   }
-}.tech-panel-wrapper {
+}
+
+.tech-panel-wrapper {
   position: relative;
   overflow: hidden;
   clip-path: polygon(0 0, 92% 0, 100% 50%, 92% 100%, 0 100%);
@@ -71,7 +73,7 @@ body {
 
 @media (max-width: 768px) {
   .tech-panel-wrapper {
-    clip-path: none;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 94%);
   }
 }
 
@@ -102,7 +104,17 @@ body {
 }
 
 @media (max-width: 768px) {
+  .marquee-content {
+    animation-duration: 45s !important;
+  }
+
   .music-panel-wrapper {
-    clip-path: none;
+    clip-path: polygon(0 0, 100% 6%, 100% 100%, 0 94%);
+    height: auto;
+  }
+
+  .travel-panel-wrapper {
+    clip-path: polygon(0 0, 100% 6%, 100% 100%, 0 100%);
+    height: auto;
   }
 }
