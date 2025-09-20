@@ -22,7 +22,7 @@ export default function HeroContainer() {
       return;
     }
 
-    const hasSeenIntro = window.localStorage.getItem(INTRO_STORAGE_KEY) === 'true';
+    const hasSeenIntro = window.sessionStorage.getItem(INTRO_STORAGE_KEY) === 'true';
 
     if (hasSeenIntro) {
       setShowHero(true);
@@ -49,7 +49,7 @@ export default function HeroContainer() {
 
   const handlePreloaderComplete = () => {
     if (typeof window !== 'undefined') {
-      window.localStorage.setItem(INTRO_STORAGE_KEY, 'true');
+      window.sessionStorage.setItem(INTRO_STORAGE_KEY, 'true');
     }
 
     setShowPreloader(false);
