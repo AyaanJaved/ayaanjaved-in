@@ -63,4 +63,15 @@ body {
   .marquee-text {
     font-size: 1rem !important;
   }
+}.tech-panel-wrapper {
+  position: relative;
+  overflow: hidden;
+  clip-path: polygon(0 0, 92% 0, 100% 50%, 92% 100%, 0 100%);
 }
+
+@media (max-width: 768px) {
+  .tech-panel-wrapper {
+    clip-path: none;
+  }
+}
+
