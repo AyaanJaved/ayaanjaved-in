@@ -1,24 +1,24 @@
-import { Inter, Montserrat, Roboto, Noto_Nastaliq_Urdu } from 'next/font/google';
+import { Cormorant_Garamond, Lora, JetBrains_Mono } from 'next/font/google';
 
-export const inter = Inter({
+export const cormorant = Cormorant_Garamond({
   subsets: ['latin'],
+  weight: ['300', '400', '500', '600'],
+  style: ['normal', 'italic'],
+  variable: '--font-display',
   display: 'swap',
 });
 
-export const montserrat = Montserrat({
+export const lora = Lora({
   subsets: ['latin'],
-  weight: ['800'],
+  weight: ['400', '500'],
+  style: ['normal', 'italic'],
+  variable: '--font-body',
   display: 'swap',
 });
 
-export const roboto = Roboto({
+export const jetbrainsMono = JetBrains_Mono({
   subsets: ['latin'],
-  weight: ['300', '400'],
-  display: 'swap',
-});
-
-export const notoNastaliqUrdu = Noto_Nastaliq_Urdu({
-  subsets: ['arabic'],
-  weight: ['700'],
+  weight: ['400', '500'],
+  variable: '--font-mono',
   display: 'swap',
 });

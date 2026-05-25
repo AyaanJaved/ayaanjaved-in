@@ -6,16 +6,19 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
-        serif: ['Playfair Display', 'Georgia', 'serif'],
+        display: ['var(--font-display)', 'Georgia', 'serif'],
+        body: ['var(--font-body)', 'Georgia', 'serif'],
+        mono: ['var(--font-mono)', 'Courier New', 'monospace'],
       },
       colors: {
-        background: '#EAE7DC',
-        dark: '#0C0908',
-        secondary: '#D8C3A5',
-        accent: {
-          DEFAULT: '#E98074',
-          hover: '#E85A4F',
+        bg: 'var(--bg)',
+        surface: 'var(--surface)',
+        accent: 'var(--accent)',
+        secondary: 'var(--secondary)',
+        ink: {
+          DEFAULT: 'var(--ink)',
+          muted: 'var(--ink-muted)',
+          faint: 'var(--ink-faint)',
         },
       },
     },
